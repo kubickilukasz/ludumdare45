@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Sea_wave
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: 01f857df564d0af4d9ee9b8d7d590a96, type: 3}
+  - {fileID: 21300000, guid: 12339bf34f0627c47bf80f01d9c0cce9, type: 3}
+  - {fileID: 21300000, guid: 40166f6d443f9fd459a8749969f47e40, type: 3}
+  - {fileID: 21300000, guid: 7ce23ce4df0fc4c47a243374bcc1663c, type: 3}
+  - {fileID: 21300000, guid: 8c8792779ca6d174eb23931657d78daf, type: 3}
+  - {fileID: 21300000, guid: 6af8d9b0b7dc1244e8e4f1f1a35ae451, type: 3}
+  - {fileID: 21300000, guid: 3b6aa02335cf1da46a2c140c075e3198, type: 3}
+  - {fileID: 21300000, guid: 4ee66480b95464e4fa8953119172cc70, type: 3}
+  - {fileID: 21300000, guid: c5bd7c9e285b3a842a349955cee8bd39, type: 3}
+  - {fileID: 21300000, guid: 190e9b176d698b94cb0998be8f0b7451, type: 3}
+  - {fileID: 21300000, guid: 1f0392eb90ff8e847ae9d0d6e7bdb8a1, type: 3}
+  - {fileID: 21300000, guid: dbdd8b5e8c6a07546a529af2cb5dba18, type: 3}
+  - {fileID: 21300000, guid: 4d455fe34c731fe4c871b34f66fe75c4, type: 3}
+  - {fileID: 21300000, guid: fe3c6bd64c0433f43bee74df85294c5d, type: 3}
+  - {fileID: 21300000, guid: 45380295dd14e204796a56b0dca2ef72, type: 3}
+  m_MinSpeed: 7
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0
