@@ -51,13 +51,15 @@ public class PlayerAnimations : MonoBehaviour
     void Update()
     {
 
-        animator.SetFloat("velocity", player.Velocity / 5);       
+        animator.SetFloat("velocity", player.Velocity / 5);
 
-        if(transform.localScale.x > 0 && player.DirectionX < 0)
+        float border = 0.1f;
+
+        if(transform.localScale.x > border && player.DirectionX < -border)
         {
             transform.localScale = new Vector3(-  Mathf.Abs(transform.localScale.x) , transform.localScale.y, transform.localScale.z);
 
-        }else if (transform.localScale.x < 0 && player.DirectionX > 0)
+        }else if (transform.localScale.x < -border && player.DirectionX > border)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }      

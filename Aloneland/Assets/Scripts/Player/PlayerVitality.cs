@@ -34,6 +34,9 @@ public class PlayerVitality : MonoBehaviour
     [SerializeField]
     DayManager dayManager;
 
+    [SerializeField]
+    WinnerManager winnerManager;
+
     [Space()]
 
     [SerializeField]
@@ -55,6 +58,7 @@ public class PlayerVitality : MonoBehaviour
     SpriteRenderer legRight;
 
     PlayerMovement playerMovement;
+    PlayerAnimations playerAnimations;
 
     public Status status = Status.Healthy;
 
@@ -87,8 +91,7 @@ public class PlayerVitality : MonoBehaviour
 
         if(status == Status.Dead)
         {
-            Debug.Log("END");
-            ScenesManager.ReloadScene();
+            winnerManager.Lose();
         }
 
         dayManager.StartNewDay(Refresh);
@@ -98,7 +101,7 @@ public class PlayerVitality : MonoBehaviour
 
     public void Refresh()
     {
-        vitality = 1f;
+        vitality = 1f - ((DayManager.NumberOfDay - 1) * 0.1f);
 
         switch (status)
         {
@@ -119,13 +122,14 @@ public class PlayerVitality : MonoBehaviour
                 break;
         }
 
-
+        playerAnimations.Wakeup();
 
     }
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        playerAnimations = GetComponent<PlayerAnimations>();
     }
 
     private void Start()

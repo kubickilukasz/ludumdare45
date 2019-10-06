@@ -17,7 +17,15 @@ public class DayManager : MonoBehaviour
     [SerializeField]
     Text dayText;
 
-    int numberOfDay = 0;
+    static int numberOfDay = 0;
+
+    public static int NumberOfDay
+    {
+        get
+        {
+            return numberOfDay;
+        }
+    }
 
     public void StartNewDay(StartDay startDay)
     {
@@ -30,6 +38,11 @@ public class DayManager : MonoBehaviour
 
         StartCoroutine(ShowDawn(startDay));
 
+    }
+
+    private void Awake()
+    {
+        numberOfDay = 0;
     }
 
     IEnumerator ShowDawn(StartDay startDay)

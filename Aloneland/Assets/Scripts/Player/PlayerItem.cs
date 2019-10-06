@@ -18,12 +18,16 @@ public class PlayerItem : MonoBehaviour
     [SerializeField]
     WorldItemManager worldItemManager;
 
+    [SerializeField]
+    WinnerManager winnerManager;
+
     PlayerAnimations playerAnimations;
 
     PlayerVitality playerVitality;
 
+    [SerializeField]
+    Animator itemAnimator;
 
-  
     public void Take(ItemHandler itemHandler)
     {
 
@@ -48,6 +52,8 @@ public class PlayerItem : MonoBehaviour
         if (pickedItem == null)
             return;
 
+        itemAnimator.runtimeAnimatorController = null;
+
         worldItemManager.CreateItemWithTrow(pickedItem, transform.position , transform.localScale.x > 0 ? 1 : -1);
 
         spriteRendererPickedItem.sprite = null;
@@ -61,7 +67,7 @@ public class PlayerItem : MonoBehaviour
 
         RecipeCraft recipe = new RecipeCraft();
 
-        Result result = recipe.GetIdItem(pickedItem ? pickedItem.IdItem : 0, itemHandler.Handler.IdItem);
+        Result result = recipe.GetIdItem(pickedItem != null ? pickedItem.IdItem : 0, itemHandler != null ? itemHandler.Handler.IdItem : 0);
 
         int new_id = result.id;
 
@@ -93,13 +99,22 @@ public class PlayerItem : MonoBehaviour
 
             Destroy(itemHandler.gameObject);
 
-        }else if (new_id <= -4)
+        }else if (new_id == -4)
         {
             //use sleeping bag
 
             playerVitality.AddVitality(-0.2f);
 
             playerVitality.Sleep();
+
+        }
+        else if (new_id == -5)
+        {
+            //WON!
+
+            Debug.Log("won");
+
+            winnerManager.Win();
 
         }
         else
@@ -184,6 +199,12 @@ public class PlayerItem : MonoBehaviour
         playerAnimations.Take();
 
         pickedItem = item;
+
+        if (pickedItem.AnimatorController != "")
+        {
+            //var anim = spriteRendererPickedItem.gameObject.AddComponent<Animator>() as Animator;
+            itemAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load(pickedItem.AnimatorController);
+        }
 
         spriteRendererPickedItem.sprite = item.SpriteItem;
     }
