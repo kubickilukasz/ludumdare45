@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5f; // speed of the player
 
+    public static bool canMove = true;
 
     Rigidbody2D rb2d; // rigidbody 2d of the gameObject(Player)
 
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
     {
         get
         {
-            return rb2d.velocity.magnitude;
+            return rb2d.velocity.sqrMagnitude;
         }
     }
 
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     {
         get
         {
-            return rb2d.velocity.x < 0 ? -1 : 1;    
+            return rb2d.velocity.x;    
         }
     }
 
@@ -37,9 +38,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
-        Vector2 direction = new Vector3(Input.GetAxis("Horizontal") , Input.GetAxis("Vertical"));
+        if (!canMove)
+            return;
 
-        Debug.Log(direction);
+        Vector2 direction = new Vector3(Input.GetAxis("Horizontal") , Input.GetAxis("Vertical"));
 
         rb2d.AddForce(direction * speed);
 

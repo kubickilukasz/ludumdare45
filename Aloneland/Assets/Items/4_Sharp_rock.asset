@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1f1e03e48aa4b469de630f05f89c51, type: 3}
+  m_Name: 4_Sharp_rock
+  m_EditorClassIdentifier: 
+  idItem: 4
+  nameItem: Sharp Rock
+  spriteItem: {fileID: 21300000, guid: efb33c96276a0074987398ec39e81e3b, type: 3}
+  pickable: 1
+  useable: 1
+  eatable: -0.9
+  talkable: 0

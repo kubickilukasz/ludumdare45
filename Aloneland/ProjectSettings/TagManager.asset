@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sea
+    uniqueID: 3933128581
+    locked: 0
+  - name: items
+    uniqueID: 129592473
+    locked: 0
   - name: Figures
     uniqueID: 2594624645
+    locked: 0
+  - name: UI
+    uniqueID: 732699657
     locked: 0
