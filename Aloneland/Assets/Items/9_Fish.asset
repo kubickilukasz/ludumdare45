@@ -19,5 +19,5 @@ MonoBehaviour:
   useable: 1
   eatable: -1
   talkable: 0
-  animatorController: fish01
+  pathAnimatorController: fish01
   additionalScript: {fileID: 0}

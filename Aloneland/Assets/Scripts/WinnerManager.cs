@@ -21,6 +21,8 @@ public class WinnerManager : MonoBehaviour
     [SerializeField]
     GameObject esc;
 
+    bool canMove = false;
+
     public void Win()
     {
 
@@ -59,6 +61,7 @@ public class WinnerManager : MonoBehaviour
     public void Continue()
     {
         esc.SetActive(false);
+        PlayerMovement.canMove = canMove;
         Time.timeScale = 1f;
     }
 
@@ -73,6 +76,8 @@ public class WinnerManager : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             esc.SetActive(true);
+            canMove = PlayerMovement.canMove;
+            PlayerMovement.canMove = false;
             Time.timeScale = 0;
 
         }

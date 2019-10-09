@@ -28,8 +28,8 @@ public class Item : ScriptableObject
     [SerializeField]
     private bool talkable = false; // can i talk with it
 
-    //[SerializeField]
-    private string animatorController;
+    [SerializeField]
+    private string pathAnimatorController;
 
     [SerializeField]
     private MonoBehaviour additionalScript;
@@ -94,7 +94,7 @@ public class Item : ScriptableObject
     {
         get
         {
-            return animatorController;
+            return pathAnimatorController;
         }
     }
 

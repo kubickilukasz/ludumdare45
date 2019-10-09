@@ -19,5 +19,5 @@ MonoBehaviour:
   useable: 1
   eatable: -1
   talkable: 0
-  animatorController: fire01
+  pathAnimatorController: fire01
   additionalScript: {fileID: 0}

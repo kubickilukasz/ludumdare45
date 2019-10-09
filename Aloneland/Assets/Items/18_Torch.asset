@@ -19,5 +19,5 @@ MonoBehaviour:
   useable: 1
   eatable: -1
   talkable: 0
-  animatorController: torch01
+  pathAnimatorController: torch01
   additionalScript: {fileID: 0}
